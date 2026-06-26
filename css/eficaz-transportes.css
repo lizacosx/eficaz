@@ -16,8 +16,8 @@
 --cor-cinza-borda:     #e5e5e5;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: system-ui, -apple-system, sans-serif; color: var(--cor-texto-escuro); background: var(--cor-branco); }
+* {margin: 0; padding: 0; box-sizing: border-box;}
+body { font-family: system-ui, -apple-system, sans-serif; color: var(--cor-texto-escuro); background: var(--cor-branco);}
 
 /* NAV */
 .nav {
@@ -37,15 +37,59 @@ body { font-family: system-ui, -apple-system, sans-serif; color: var(--cor-texto
 .nav-links a { color: var(--cor-texto-nav); text-decoration: none; font-size: 14px; transition: color 0.2s; }
 .nav-links a:hover { color: var(--cor-primaria);}
 .nav-cta { background: var(--cor-primaria); color: var(--cor-branco); padding: 9px 22px; border-radius: 6px; font-size: 14px; text-decoration: none; font-weight: 500; transition: background 0.2s;}
-.nav-cta:hover { background: var(--cor-primaria-hover);}
+.nav-cta:hover {background: var(--cor-primaria-hover);}
 
 /* HERO */
 .hero {
-  background: var(--cor-dark);
-  color: var(--cor-branco);
-  padding: 6rem 3rem;
+  position: relative;
+  min-height: calc(100vh - 64px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  overflow: hidden;
+  color: var(--cor-branco);
+  padding: 6rem 2rem;
 }
+ 
+.hero-slides {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+ 
+.slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+}
+ 
+.slide.ativa { opacity: 1; }
+ 
+.slide-1 {
+  background-image: linear-gradient(rgba(15,27,61,0.78), rgba(15,27,61,0.78)), url('../imagens/pesado1.jpeg');
+}
+.slide-2 {
+  background-image: linear-gradient(rgba(15,27,61,0.78), rgba(15,27,61,0.78)), url('../imagens/pesado2.jpeg');
+}
+.slide-3 {
+  background-image: linear-gradient(rgba(15,27,61,0.78), rgba(15,27,61,0.78)), url('../imagens/LEVE1.jpeg');
+}
+.slide-4 {
+  background-image: linear-gradient(rgba(15,27,61,0.78), rgba(15,27,61,0.78)), url('../imagens/LEVE2.jpeg');
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
 .hero-tag {
   background: var(--cor-primaria-bg-leve);
   color: var(--cor-primaria);
@@ -58,7 +102,16 @@ body { font-family: system-ui, -apple-system, sans-serif; color: var(--cor-texto
   letter-spacing: 1.5px;
   font-weight: 500;
 }
-.hero h1 { font-size: 48px; font-weight: 600; line-height: 1.15; max-width: 620px; margin: 0 auto 1rem; }
+
+.hero h1 { 
+  font-size: 36px; 
+  font-weight: 600; 
+  line-height: 1.15; 
+  max-width: 900px; 
+  margin: 0 auto 1rem;
+  white-space: nowrap;
+}
+
 .hero h1 span { color: var(--cor-primaria); }
 .hero p { color: var(--cor-texto-hero); font-size: 16px; max-width: 500px; margin: 0 auto 2.5rem; line-height: 1.7; }
 .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
@@ -175,7 +228,7 @@ body { font-family: system-ui, -apple-system, sans-serif; color: var(--cor-texto
 /* RESPONSIVO */
 @media (max-width: 768px) {
   .nav-links { display: none; }
-  .hero h1 { font-size: 32px; }
+  .hero h1 { font-size: 26px;  white-space: normal;}
   .about-grid { grid-template-columns: 1fr; }
   .why-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr 1fr; }

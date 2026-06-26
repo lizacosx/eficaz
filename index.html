@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Eficaz Transportes</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
-  <link rel="stylesheet" href="css/eficaz-transportes.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"/>
+  <link rel="stylesheet" href="css/eficaz-transportes.css"/>
 </head>
 <body>
 
   <!-- NAVEGAÇÃO -->
   <nav class="nav">
     <a href="#" class="nav-logo">
-        <img src="imagem/logoeficaz.png" alt="Eficaz Transportes">
+        <img src="imagens/logoeficaz.png" alt="Eficaz Transportes">
     </a>
     <ul class="nav-links">
       <li><a href="#">Início</a></li>
@@ -25,12 +25,21 @@
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-tag">GUINCHO E TRANSPORTE</div>
-    <h1>Bem-vindo à <span>Eficaz Transportes</span></h1>
-    <p>Remoção de veículos com agilidade, segurança e qualidade. Atendemos 24h, todos os dias.</p>
-    <div class="hero-btns">
-      <a href="https://wa.me/9999999999" class="btn-primary">Entre em contato</a>
-      <a href="#servicos" class="btn-secondary">Nossos serviços</a>
+    <div class="hero-slides">
+      <div class="slide slide-1"></div>
+      <div class="slide slide-2"></div>
+      <div class="slide slide-3"></div>
+      <div class="slide slide-4"></div>
+    </div>
+ 
+    <div class="hero-content">
+      <div class="hero-tag">GUINCHOS PARA VEÍCULOS LEVES, PESADOS E UTILITÁRIOS</div>
+      <h1>Bem-vindo à <span>Eficaz Transportes</span></h1>
+      <p>Remoção e transporte de veículos com agilidade, segurança e qualidade. Atendemos 24h, todos os dias.</p>
+      <div class="hero-btns">
+        <a href="https://wa.me/9999999999" class="btn-primary">Entre em contato</a>
+        <a href="#servicos" class="btn-secondary">Nossos serviços</a>
+      </div>
     </div>
   </section>
 
@@ -42,7 +51,7 @@
     </div>
     <div class="stat">
       <div class="stat-num">5★</div>
-      <div class="stat-label">Em </div>
+      <div class="stat-label">Em avaliações </div>
     </div>
     <div class="stat">
       <div class="stat-num">24h</div>
@@ -62,7 +71,6 @@
           <div class="contact-items">
             <div class="contact-item">
               <i class="ti ti-mail"></i>
-              <!-- TROCAR: seu e-mail real -->
               eficaztransportes@gmail.com
             </div>
             <div class="contact-item">
@@ -76,9 +84,7 @@
           </div>
         </div>
         <div class="about-image">
-          <!-- TROCAR: coloque uma imagem real aqui -->
-          <!-- <img src="sua-imagem.jpg" alt="Eficaz Transportes" style="width:100%;height:100%;object-fit:cover;border-radius:16px;" /> -->
-          <i class="ti ti-crane"></i>
+          <img src="imagens/logo.jpeg" alt="Eficaz Transportes" style="width:100%;height:100%;object-fit:cover;border-radius:16px;"/>
         </div>
       </div>
     </div>
@@ -94,14 +100,14 @@
       <div class="services-grid">
         <div class="service-card">
           <div class="service-icon"><i class="ti ti-car"></i></div>
-          <h3>Transporte de Veículos de Luxo</h3>
-          <p>Realizamos o transporte de veículos de luxo com serviço exclusivo, veículos de altura especial e cobertura de seguro de carga. Segurança e integridade garantidas.</p>
+          <h3>Transporte de Veículos leves, pesados e utilitários</h3>
+          <p>Realizamos transporte de veículos leves, pesados e utilitários com segurança, agilidade e total responsabilidade, garantindo pontualidade, integridade e tranquilidade em todo o percurso.</p>
           <a href="#contato" class="service-link">Saiba mais <i class="ti ti-arrow-right"></i></a>
         </div>
         <div class="service-card">
           <div class="service-icon"><i class="ti ti-map"></i></div>
-          <h3>Atendimento em Todo o Brasil</h3>
-          <p>Estamos preparados para atender em todo o território nacional, com serviço ágil e seguro, entregando seu veículo no prazo com máxima segurança.</p>
+          <h3>Atendimento do Rio para Todo o Brasil</h3>
+          <p>Estamos preparados para atender em todo o território nacional, realizando o transporte de veículos do Rio de Janeiro para qualquer região do Brasil com agilidade, segurança e total compromisso na entrega.</p>
           <a href="#contato" class="service-link">Saiba mais <i class="ti ti-arrow-right"></i></a>
         </div>
         <div class="service-card">
@@ -210,7 +216,7 @@
         <h4>Endereço</h4>
         <ul>
           <!-- TROCAR: sua cidade/estado -->
-          <li><a href="#">Cidade - UF</a></li>
+          <li><a href="#">Rio de Janeiro - RJ</a></li>
         </ul>
         <h4 style="margin-top:1rem;">Telefone</h4>
         <ul>
@@ -225,14 +231,23 @@
         </ul>
         <h4 style="margin-top:1rem;">Fale conosco</h4>
         <ul>
-          <!-- TROCAR: links reais das redes sociais -->
           <li><a href="#">WhatsApp</a></li>
-          <li><a href="#">Instagram</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">Eficaz Transportes © 2026</div>
   </footer>
-
+  <!-- SLIDESHOW SCRIPT -->
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    let atual = 0;
+    slides[atual].classList.add('ativa');
+ 
+    setInterval(() => {
+      slides[atual].classList.remove('ativa');
+      atual = (atual + 1) % slides.length;
+      slides[atual].classList.add('ativa');
+    }, 5000);
+  </script>
 </body>
 </html>
